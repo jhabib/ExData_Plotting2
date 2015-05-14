@@ -2,7 +2,7 @@ print("Please run loadData.R before proceeding")
 
 ##Plot aggregate Emissions vs year
 agrData <- aggregate(Emissions ~ year, data=NEI, FUN="sum")
-plot(x=agrData$year, y=agrData$Emissions, type="l")
+plot(x=agrData$year, y=agrData$Emissions, type="p", main="1 - Emissions by Year", xlab="year", ylab="Emissions")
 
 ##Add a linear trend line
 fit <- glm(agrData$"Emissions"~agrData$"year")

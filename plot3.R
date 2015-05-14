@@ -12,7 +12,10 @@ lapply(packages, library, character.only=TRUE)
 #Plot trend for each "type" of Source for Baltimore City (fips=="24510")
 columnsToKeep <- which(colnames(NEI) %in% c("Emissions", "year", "type"))
 agrData <- aggregate(Emissions ~ type+year, data=NEI[NEI$fips=="24510", columnsToKeep], FUN="sum")
-ggplot(data=agrData, aes(x=year, y=Emissions, colour=type)) + geom_point() + geom_smooth(method=lm, se=FALSE)
+ggplot(data=agrData, aes(x=year, y=Emissions, colour=type)) + 
+  labs(title="3 - Baltimore Emissions by Type by Year") + 
+  geom_point() + 
+  geom_smooth(method=lm, se=FALSE)
 
 ##An alternative, a multifaceted plot
 # ggplot(data=agrData, aes(x=year, y=Emissions)) + 

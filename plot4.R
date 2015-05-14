@@ -23,7 +23,7 @@ agrData <- aggregate(Emissions ~ year, data=mergedData, FUN="sum")
 
 ##Create a plot of aggregate Emissions from Coal sources vs year
 ##Add a trendline with abline
-with(agrData, plot(x=year, y=Emissions) +
+with(agrData, plot(x=year, y=Emissions, main="4 - Coal Emissions by Year across USA", xlab="year", ylab="Emissions") +
        abline(glm(Emissions ~ year), col="blue", lwd=1))
 
 ##Output the plot to plot4.png

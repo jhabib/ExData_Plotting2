@@ -3,7 +3,7 @@ print("Please run loadData.R before proceeding")
 #Plot trend for Baltimore City (fips=="24510")
 columnsToKeep <- which(colnames(NEI) %in% c("Emissions", "year"))
 agrData <- aggregate(Emissions ~ year, data=NEI[NEI$fips=="24510", columnsToKeep], FUN="sum")
-plot(x=agrData$year, y=agrData$Emissions, type="l")
+plot(x=agrData$year, y=agrData$Emissions, type="p", main="2 - Emissions in Baltimore by Year", xlab="year", ylab="Emissions")
 
 ##Add a linear trend line
 fit <- glm(agrData$"Emissions"~agrData$"year")
