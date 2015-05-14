@@ -1,3 +1,6 @@
+##Data is loaded using the loadData.R script.
+##NEI and SCC data frames will not be available without running loadData.R
+##"https://github.com/jhabib/ExData_Plotting2/blob/master/loadData.R"
 print("Please run loadData.R before proceeding")
 
 ##Plot aggregate Emissions vs year
